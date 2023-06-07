@@ -18,7 +18,7 @@ func init() {
 
 func main() {
 	// Load templates
-	engine := html.New("./views", ".html")
+	engine := html.New("./views", ".tmpl")
 
 	// Setup app
 	app := fiber.New(fiber.Config{
