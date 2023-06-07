@@ -28,12 +28,11 @@ func main() {
 	//Routes
 	app.Get("/", controllers.PostsIndex)
 	app.Use(middleware.RequireAuth)
+	routes.Routes(app)
 
 	// Configure app
 	app.Static("/", "./public")
 
-	// Routes
-	routes.Routes(app)
 	// Start the app
 	err := app.Listen(":" + os.Getenv("PORT"))
 	if err != nil {
